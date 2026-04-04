@@ -6,6 +6,7 @@ import { templates } from '@/lib/templates'
 import TemplateSelector from '@/components/TemplateSelector'
 import ContentForm from '@/components/ContentForm'
 import OutputDisplay from '@/components/OutputDisplay'
+import HomeSection from '@/components/HomeSection'
 
 export default function Home() {
   const [selectedTemplate, setSelectedTemplate] = useState<Template>(templates[0])
@@ -61,14 +62,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-semibold text-blue-900 mb-1">
-            Generatore di contenuti
-          </h1>
-          <p className="text-gray-500">
-            Crea testi professionale in pochi secondi
-          </p>
-        </div>
+        <HomeSection/>
 
         {/* Template Selector */}
         <section className="bg-white rounded-lg p-5 mb-6 border-gray-200">
