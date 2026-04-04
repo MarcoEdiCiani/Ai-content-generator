@@ -26,7 +26,7 @@ export default function OutputDisplay({ content, error }: Props) {
     return (
       <div className="p-8 border-2 border-dashed border-gray-200 rounded-xl text-center text-gray-400">
         <div className="text-4xl mb-2"></div>
-        <div className="text-sm">Il tuo copy apparirà qui</div>
+        <div className="text-sm">Il tuo testo apparirà qui</div>
       </div>
     )
   }

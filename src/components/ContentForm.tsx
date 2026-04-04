@@ -51,8 +51,8 @@ export default function ContentForm({
               onClick={() => onToneChange(t.value)}
               className={`px-3 py-1.5 rounded-full text-sm border transition-all ${
                 tone === t.value
-                  ? 'bg-violet-500 text-white border-violet-500'
-                  : 'bg-white text-gray-600 border-gray-300 hover:border-violet-400'
+                  ? 'bg-blue-500 text-white border-blue-500'
+                  : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
               }`}
             >
               {t.label}
@@ -64,7 +64,7 @@ export default function ContentForm({
       <button
         onClick={onSubmit}
         disabled={loading}
-        className="w-full py-3 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-all duration-200"
+        className="w-full py-3 bg-blue-600 hover:bg-gray-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-all duration-200"
       >
         {loading ? 'Generazione in corso...' : ' Genera Copy'}
       </button>

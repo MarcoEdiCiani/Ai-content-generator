@@ -66,7 +66,7 @@ export default function Home() {
             Generatore di contenuti
           </h1>
           <p className="text-gray-500">
-            Crea copy professionale in pochi secondi
+            Crea testi professionale in pochi secondi
           </p>
         </div>
 
