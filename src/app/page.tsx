@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { Template } from '@/types'
 import { templates } from '@/lib/templates'
-import HeroSection from '@/components/HeroSection'
+import HeroSection from '@/components/HomeSection'
 import TemplateSelector from '@/components/TemplateSelector'
 import ContentForm from '@/components/ContentForm'
 import OutputDisplay from '@/components/OutputDisplay'
