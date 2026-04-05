@@ -1,26 +1,24 @@
-import { Template } from "@/types";
-import { templates } from "@/lib/templates";
+import { Template } from '@/types'
+import { templates } from '@/lib/templates'
 
-interface Props{
-    selected: Template
-    onSelect: (template:Template) => void
+interface Props {
+  selected: Template
+  onSelect: (template: Template) => void
 }
 
-export default function TemplateSelector({ selected,onSelect}:Props){
-    return(
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+export default function TemplateSelector({ selected, onSelect }: Props) {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
       {templates.map(template => (
-        <button
-          key={template.id}
-          onClick={() => onSelect(template)}
-          className={`p-4 rounded-xl border-2 text-left transition-all duration-200 ${
-            selected.id === template.id
-              ? 'glass-accent p-4 text-left rounded-xl transition-all'
-              : 'glass-accent p-4 text-left rounded-xl hover:border-violet-500/30'
-          }`}
-        >
-          <div className="font-semibold text-sm text-white">{template.label}</div>
-          <div className="text-xs mt-1 text-white/40">{template.description}</div>
+        <button key={template.id} onClick={() => onSelect(template)}
+          className="p-4 rounded-2xl text-left transition-all duration-200"
+          style={{
+            border: selected.id === template.id ? '1.5px solid #f59e0b' : '1.5px solid #f0e4c0',
+            background: selected.id === template.id ? '#fffbf0' : '#ffffff',
+            boxShadow: selected.id === template.id ? '0 4px 20px rgba(245,158,11,0.15)' : 'none',
+          }}>
+          <div className="text-sm font-semibold text-stone-800 mb-1">{template.label}</div>
+          <div className="text-xs text-stone-400">{template.description}</div>
         </button>
       ))}
     </div>
