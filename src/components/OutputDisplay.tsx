@@ -16,7 +16,7 @@ export default function OutputDisplay({ content, error }: Props) {
 
   if (error) {
     return (
-      <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+      <div className="glass-accent p-5">
         ⚠️ {error}
       </div>
     )
@@ -24,7 +24,7 @@ export default function OutputDisplay({ content, error }: Props) {
 
   if (!content) {
     return (
-      <div className="p-8 border-2 border-dashed border-gray-200 rounded-xl text-center text-gray-400">
+      <div className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap font-dm">
         <div className="text-4xl mb-2"></div>
         <div className="text-sm">Il tuo testo apparirà qui</div>
       </div>
@@ -38,7 +38,7 @@ export default function OutputDisplay({ content, error }: Props) {
       </pre>
       <button
         onClick={handleCopy}
-        className="mt-4 px-4 py-2 bg-white border border-gray-300 hover:border-violet-400 text-sm rounded-lg transition-all"
+        className="mt-4 px-4 py-2 glass text-white/60 text-sm rounded-xl hover:text-white transition-all"
       >
         {copied ? 'Copiato!' : 'Copia testo'}
       </button>

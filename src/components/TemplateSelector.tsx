@@ -15,12 +15,12 @@ export default function TemplateSelector({ selected,onSelect}:Props){
           onClick={() => onSelect(template)}
           className={`p-4 rounded-xl border-2 text-left transition-all duration-200 ${
             selected.id === template.id
-              ? 'border-violet-500 bg-violet-50 text-violet-900'
-              : 'border-gray-200 bg-white hover:border-violet-300 text-gray-700'
+              ? 'glass-accent p-4 text-left rounded-xl transition-all'
+              : 'glass-accent p-4 text-left rounded-xl hover:border-violet-500/30'
           }`}
         >
-          <div className="font-semibold text-sm">{template.label}</div>
-          <div className="text-xs mt-1 opacity-70">{template.description}</div>
+          <div className="font-semibold text-sm text-white">{template.label}</div>
+          <div className="text-xs mt-1 text-white/40">{template.description}</div>
         </button>
       ))}
     </div>

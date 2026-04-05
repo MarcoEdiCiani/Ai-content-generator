@@ -16,7 +16,7 @@ export default function ContentForm({
   onFieldChange, onToneChange, onSubmit
 }: Props) {
   return (
-    <div className="space-y-4">
+    <div className="input-dark">
       {template.fields.map(field => (
         <div key={field.name}>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -64,7 +64,7 @@ export default function ContentForm({
       <button
         onClick={onSubmit}
         disabled={loading}
-        className="w-full py-3 bg-blue-600 hover:bg-gray-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-all duration-200"
+        className="w-full py-3 btn-primary"
       >
         {loading ? 'Generazione in corso...' : ' Genera Copy'}
       </button>

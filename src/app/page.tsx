@@ -65,7 +65,7 @@ export default function Home() {
         <HomeSection/>
 
         {/* Template Selector */}
-        <section className="bg-white rounded-lg p-5 mb-6 border-gray-200">
+        <section className="glass p-6 mb-4">
           <h2 className="text-xs font-medium text-blue-500 uppercase tracking-wide mb-3">
             Scegli il tipo di contenuto
           </h2>
@@ -77,7 +77,7 @@ export default function Home() {
 
         {/* Form + Output */}
         <section className="grid md:grid-cols-2 gap-5">
-          <div className="bg-white rounded-lg p-5 border border-gray-200">
+          <div className="glass p-6 mb-4">
             <h2 className="text-xs font-medium text-blue-500 uppercase tracking-wide mb-3">
               Inserisci i dettagli
             </h2>
@@ -92,7 +92,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="bg-white rounded-lg p-5 border border-gray-200">
+          <div className="glass p-6 mb-4">
             <h2 className="text-xs font-medium text-blue-500 uppercase tracking-wide mb-4">
               Contenuto generato
             </h2>
