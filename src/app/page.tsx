@@ -43,23 +43,20 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#fafaf7]">
+    <main style={{ minHeight: '100vh', background: '#faf9f6' }}>
       <HeroSection />
-
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
 
         {/* Template selector */}
-        <p className="text-[11px] font-semibold tracking-widest text-[#a8a29e] uppercase mb-4">
-          Scegli il tipo di contenuto
+        <p style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b8a88a', marginBottom: 16 }}>
+          Tipo di contenuto
         </p>
-        <div className="mb-8">
-          <TemplateSelector selected={selectedTemplate} onSelect={handleTemplateSelect} />
-        </div>
+        <TemplateSelector selected={selectedTemplate} onSelect={handleTemplateSelect} />
 
         {/* Form + Output */}
-        <div className="grid md:grid-cols-2 gap-5">
-          <div className="glass-card p-6">
-            <p className="text-[11px] font-semibold tracking-widest text-[#a8a29e] uppercase mb-5">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 32 }}>
+          <div style={{ background: '#fff', border: '1px solid #ece8df', borderRadius: 16, padding: 28 }}>
+            <p style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b8a88a', marginBottom: 24 }}>
               Dettagli
             </p>
             <ContentForm
@@ -72,8 +69,8 @@ export default function Home() {
               onSubmit={handleGenerate}
             />
           </div>
-          <div className="glass-card p-6">
-            <p className="text-[11px] font-semibold tracking-widest text-[#a8a29e] uppercase mb-5">
+          <div style={{ background: '#fff', border: '1px solid #ece8df', borderRadius: 16, padding: 28 }}>
+            <p style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b8a88a', marginBottom: 24 }}>
               Output generato
             </p>
             <OutputDisplay content={content} error={error} />

@@ -1,99 +1,111 @@
+export default function HomeSection() {
+  return (
+    <div style={{
+      background: '#faf9f6',
+      borderBottom: '1px solid #ece8df',
+      padding: '72px 40px 80px',
+      textAlign: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
 
-export default function HomeSection(){
-    return (
-    <div className="relative overflow-hidden text-center"
-      style={{ background: 'linear-gradient(160deg, #fffbf0 0%, #fff8e6 50%, #fef3c7 100%)', borderBottom: '1px solid #f0e4c0' }}>
+      {/* Glow sottile */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(196,136,42,0.07), transparent)',
+      }} />
 
-      {/* Orbs */}
-      <div className="pointer-events-none absolute -top-24 -left-20 w-[400px] h-[400px] rounded-full opacity-30"
-        style={{ background: 'radial-gradient(circle, #fbbf24, transparent 70%)', filter: 'blur(80px)' }} />
-      <div className="pointer-events-none absolute -bottom-16 -right-16 w-[300px] h-[300px] rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, #f59e0b, transparent 70%)', filter: 'blur(70px)' }} />
+      <div style={{ position: 'relative', zIndex: 1 }}>
 
-      {/* Dot grid */}
-      <div className="pointer-events-none absolute inset-0"
-        style={{ backgroundImage: 'radial-gradient(circle, rgba(251,191,36,0.15) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-
-      <div className="relative z-10 px-6 pt-14 pb-16">
-
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7 text-xs font-medium tracking-widest uppercase"
-          style={{ background: 'rgba(251,191,36,0.2)', border: '1px solid rgba(245,158,11,0.35)', color: '#92400e' }}>
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-          AI-Powered Marketing Tool
-        </div>
+        {/* Eyebrow */}
+        <p style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#b8a88a', fontWeight: 400, marginBottom: 32 }}>
+          Slogan da inventare
+                  </p>
 
         {/* Headline */}
-        <h1 className="font-[Syne] text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-stone-900 mb-4">
-          Copy che{' '}
-          <span style={{ background: 'linear-gradient(135deg,#f59e0b,#d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            converte
-          </span>
-          ,<br />in 5 secondi.
+        <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 58, fontWeight: 400, lineHeight: 1.1, color: '#1a1714', marginBottom: 20 }}>
+          Crea i tuoi{' '}
+          <em style={{ fontStyle: 'italic', color: '#c4882a' }}>messaggi</em>
+          ,<br />in cinque secondi.
         </h1>
 
-        <p className="text-stone-500 font-light text-lg max-w-md mx-auto leading-relaxed mb-12">
-          Scegli un template, inserisci i dettagli.<br />
-          Gemini AI genera copy professionale istantaneamente.
+        {/* Subtitle */}
+        <p style={{ fontSize: 17, fontWeight: 300, color: '#8c7e6a', maxWidth: 400, margin: '0 auto 64px', lineHeight: 1.8 }}>
+          Scegli un template, descrivi il prodotto.<br />Il resto lo fa  l'AI.
         </p>
 
-        {/* Flow steps */}
-        <div className="flex items-center justify-center mb-10">
-          {[
-            { n: '1', icon: '📋', title: 'Template', desc: 'Scegli tipo e compila' },
-            { n: '2', icon: '✦', title: 'Gemini AI', desc: 'Analizza e genera', active: true },
-            { n: '3', icon: '⚡', title: 'Output', desc: 'Copia e pubblica' },
-          ].map((step, i) => (
-            <div key={step.n} className="flex items-center">
-              <div className="relative w-44 text-center rounded-2xl px-4 py-5 transition-all duration-200"
-                style={{
-                  background: step.active ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.7)',
-                  border: step.active ? '1px solid rgba(245,158,11,0.45)' : '1px solid rgba(245,158,11,0.2)',
-                  backdropFilter: 'blur(12px)',
-                  boxShadow: step.active ? '0 4px 24px rgba(245,158,11,0.2)' : '0 2px 12px rgba(0,0,0,0.04)',
-                }}>
-                <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-amber-400 text-white text-[10px] font-bold flex items-center justify-center font-[Syne]">
-                  {step.n}
-                </div>
-                <div className="text-2xl mb-2">{step.icon}</div>
-                <div className="text-sm font-bold text-stone-800 mb-1 font-[Syne]">{step.title}</div>
-                <div className="text-[11px] text-stone-400 leading-relaxed">{step.desc}</div>
-              </div>
+        {/* Flow editoriale */}
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', maxWidth: 560, margin: '0 auto 60px' }}>
 
-              {i < 2 && (
-                <div className="w-8 flex-shrink-0 relative flex items-center justify-center">
-                  <div className="absolute w-full h-px" style={{ background: 'linear-gradient(90deg, rgba(245,158,11,0.3), rgba(245,158,11,0.7))' }} />
-                  <div className="w-2 h-2 border-t-2 border-r-2 border-amber-400 rotate-45 bg-amber-50 z-10" />
+          {/* Linea orizzontale */}
+          <div style={{
+            position: 'absolute', top: 28, left: '10%', right: '10%', height: 1,
+            background: 'linear-gradient(90deg, transparent, #ddd5c0 20%, #ddd5c0 80%, transparent)',
+          }} />
+
+          {[
+            { n: '01', title: 'Scrivi', desc: 'Scegli un template e descrivi il prodotto', italic: false },
+            { n: '02', title: 'Genera', desc: 'Gemini elabora e scrive il copy', italic: true },
+            { n: '03', title: 'Pubblica', desc: 'Copia il testo e usalo dove vuoi', italic: false },
+          ].map((step) => (
+            <div key={step.n} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
+              <span style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: 13,
+                color: step.italic ? '#1a1714' : '#c4882a',
+                background: '#faf9f6',
+                padding: '22px 12px',
+                position: 'relative',
+                zIndex: 1,
+                lineHeight: 1,
+              }}>
+                {step.n}
+              </span>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: 16,
+                  fontStyle: step.italic ? 'italic' : 'normal',
+                  color: '#1a1714',
+                  marginBottom: 6,
+                }}>
+                  {step.title}
                 </div>
-              )}
+                <div style={{ fontSize: 12, fontWeight: 300, color: '#a89880', lineHeight: 1.7, maxWidth: 130, margin: '0 auto' }}>
+                  {step.desc}
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginBottom: 56 }}>
           {['Social Post', 'Email Subject', 'Descrizione Prodotto', 'Ad Copy', 'Blog Intro'].map(t => (
-            <span key={t} className="px-4 py-1.5 rounded-full text-xs transition-all"
-              style={{ border: '1px solid #e5d9b6', background: 'rgba(255,255,255,0.6)', color: '#92400e' }}>
+            <span key={t} style={{
+              padding: '7px 20px', borderRadius: 999,
+              border: '1px solid #ddd5c0', background: 'transparent',
+              fontSize: 12, color: '#8c7e6a', fontFamily: 'Fira Sans, sans-serif',
+            }}>
               {t}
             </span>
           ))}
         </div>
 
         {/* Stats */}
-        <div className="flex justify-center pt-8" style={{ borderTop: '1px solid #f0e4c0' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', borderTop: '1px solid #ece8df', paddingTop: 40, maxWidth: 400, margin: '0 auto' }}>
           {[
-            { v: '5', l: 'template' },
-            { v: '<5s', l: 'generazione' },
-            { v: '∞', l: 'gratis con Gemini' },
+            { v: '5', l: 'Template' },
+            { v: '<5s', l: 'Generazione' },
+            { v: '∞', l: 'Gratis' },
           ].map((s, i) => (
-            <div key={s.l} className="flex-1 text-center px-8"
-              style={{ borderRight: i < 2 ? '1px solid #f0e4c0' : 'none' }}>
-              <div className="text-2xl font-extrabold font-[Syne] mb-1"
-                style={{ background: 'linear-gradient(135deg,#f59e0b,#d97706)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <div key={s.l} style={{ flex: 1, textAlign: 'center', padding: '0 20px', borderRight: i < 2 ? '1px solid #ece8df' : 'none' }}>
+              <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 26, fontStyle: 'italic', color: '#c4882a', display: 'block', marginBottom: 5 }}>
                 {s.v}
-              </div>
-              <div className="text-xs text-stone-400">{s.l}</div>
+              </span>
+              <span style={{ fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b8a88a' }}>
+                {s.l}
+              </span>
             </div>
           ))}
         </div>
@@ -101,5 +113,4 @@ export default function HomeSection(){
       </div>
     </div>
   )
-    
 }

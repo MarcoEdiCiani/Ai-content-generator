@@ -1,34 +1,52 @@
-import { Template } from "@/types";
-import { tones } from "@/lib/templates";
+import { Template } from '@/types'
+import { tones } from '@/lib/templates'
 
 interface Props {
-    template: Template
-    fields: Record<string,string>
-    tone:string
-    loading:boolean
-    onFieldChange: (name:string, value:string)=> void
-    onToneChange:(tone:string) => void
-    onSubmit: ()=> void
+  template: Template
+  fields: Record<string, string>
+  tone: string
+  loading: boolean
+  onFieldChange: (name: string, value: string) => void
+  onToneChange: (tone: string) => void
+  onSubmit: () => void
 }
 
-export default function ContentForm({
-  template, fields, tone, loading,
-  onFieldChange, onToneChange, onSubmit
-}: Props) {
+const inputStyle = {
+  width: '100%',
+  padding: '10px 14px',
+  border: '1px solid #ddd5c0',
+  borderRadius: 8,
+  fontSize: 13,
+  color: '#1a1714',
+  background: '#faf9f6',
+  fontFamily: 'Fira Sans, sans-serif',
+  outline: 'none',
+}
+
+const labelStyle = {
+  display: 'block',
+  fontSize: 11,
+  fontWeight: 500,
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase' as const,
+  color: '#b8a88a',
+  marginBottom: 7,
+}
+
+export default function ContentForm({ template, fields, tone, loading, onFieldChange, onToneChange, onSubmit }: Props) {
   return (
-    <div className="input-dark">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+
       {template.fields.map(field => (
         <div key={field.name}>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            {field.label}
-          </label>
+          <label style={labelStyle}>{field.label}</label>
           {field.type === 'textarea' ? (
             <textarea
               rows={3}
               placeholder={field.placeholder}
               value={fields[field.name] || ''}
               onChange={e => onFieldChange(field.name, e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400 resize-none"
+              style={{ ...inputStyle, resize: 'none' }}
             />
           ) : (
             <input
@@ -36,24 +54,31 @@ export default function ContentForm({
               placeholder={field.placeholder}
               value={fields[field.name] || ''}
               onChange={e => onFieldChange(field.name, e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-violet-400"
+              style={inputStyle}
             />
           )}
         </div>
       ))}
 
+      {/* Tono */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Tono</label>
-        <div className="flex flex-wrap gap-2">
+        <label style={labelStyle}>Tono</label>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {tones.map(t => (
             <button
               key={t.value}
               onClick={() => onToneChange(t.value)}
-              className={`px-3 py-1.5 rounded-full text-sm border transition-all ${
-                tone === t.value
-                  ? 'bg-blue-500 text-white border-blue-500'
-                  : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
-              }`}
+              style={{
+                padding: '6px 14px',
+                borderRadius: 999,
+                border: tone === t.value ? '1px solid #c4882a' : '1px solid #ddd5c0',
+                background: tone === t.value ? '#c4882a' : '#faf9f6',
+                color: tone === t.value ? '#fff' : '#8c7e6a',
+                fontSize: 12,
+                cursor: 'pointer',
+                fontFamily: 'Fira Sans, sans-serif',
+                transition: 'all 0.2s',
+              }}
             >
               {t.label}
             </button>
@@ -61,13 +86,29 @@ export default function ContentForm({
         </div>
       </div>
 
+      {/* Bottone genera */}
       <button
         onClick={onSubmit}
         disabled={loading}
-        className="w-full py-3 btn-primary"
+        style={{
+          width: '100%',
+          padding: '13px',
+          borderRadius: 10,
+          border: 'none',
+          cursor: loading ? 'not-allowed' : 'pointer',
+          fontSize: 14,
+          fontWeight: 500,
+          fontFamily: 'Fira Sans, sans-serif',
+          background: loading ? '#d4c4a0' : '#c4882a',
+          color: '#fff',
+          boxShadow: loading ? 'none' : '0 4px 20px rgba(196,136,42,0.35)',
+          transition: 'all 0.2s',
+          letterSpacing: '0.02em',
+        }}
       >
-        {loading ? 'Generazione in corso...' : ' Genera Copy'}
+        {loading ? 'Generazione in corso...' : '✦  Genera Copy'}
       </button>
+
     </div>
   )
 }

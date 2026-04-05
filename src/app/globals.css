@@ -1,54 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    background: #fafaf7;
-    color: #1c1917;
-    font-family: 'DM Sans', sans-serif;
+    background: #faf9f6;
+    color: #1a1714;
+    font-family: 'Fira Sans', sans-serif;
   }
-}
-
-@layer components {
-  .glass-card {
-    background: #ffffff;
-    border: 1px solid #f0e4c0;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-  }
-  .input-field {
-    width: 100%;
-    padding: 9px 12px;
-    border: 1px solid #e5d9b6;
-    border-radius: 9px;
-    font-size: 13px;
-    color: #1c1917;
-    background: #fafaf7;
-    font-family: 'DM Sans', sans-serif;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .input-field::placeholder { color: #c4b9a8; }
-  .input-field:focus {
-    outline: none;
-    border-color: #f59e0b;
-    background: #fffbf0;
-  }
-  .btn-primary {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: #fff;
-    transition: all 0.2s;
-    box-shadow: 0 4px 16px rgba(245,158,11,0.3);
-  }
-  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-primary:disabled { opacity: 0.4; transform: none; box-shadow: none; }
 }
